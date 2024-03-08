@@ -151,7 +151,7 @@
                         </div>
                     </div>
                     <div class="portfolio__img">
-                        <img src="work7.jpg" alt="">
+                        <img src="work6.jpg" alt="">
 
                         <div class="portfolio__link">
                             <a href="#" class="portfolio__link-name">Coming soon...</a>
@@ -190,6 +190,7 @@
                 <script>
                     function sendEmail(){
                         Email.send({
+                            SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
                             Host : "smtp.gmail.com",
                             Username : "jokinen.lotta@gmail.com",
                             Password : "password",
@@ -200,7 +201,7 @@
                                 + "<br> Email: " + document.getElementById("email").value
                                 + "<br> Message: " + document.getElementById("message").value
                         }).then(
-                          message => alert("Message Sent Succesfully")
+                          message => alert("Message sent succesfully. Thank you!")
                         );
                     }
                 </script>
