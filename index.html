@@ -177,15 +177,33 @@
                         <span class="contact__text">Uusimaa</span>
                     </div>
 
-                    <form action="https://omadomain.fi/jokinen.lotta@gmail.com" class="contact__form" method="post">
+                    <form onsubmit="sendEmail(); reset(); return false;"> <!--/c action="https://omadomain.fi/jokinen.lotta@gmail.com" class="contact__form" method="post"-->
                         <div class="contact__inputs">
-                            <input type="text" placeholder="Name" class="contact__input">
-                            <input type="mail" placeholder="Email" class="contact__input">
+                            <input type="text" id="name" placeholder="Your name" class="contact__input" required>
+                            <input type="mail" id="email" placeholder="Your email" class="contact__input" required>
                         </div>
-                        <textarea name="message" id="message" cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea name="message" id="message" placeholder="Write a message..." cols="0" rows="10" class="contact__input"></textarea>
                         <input type="submit" class="contact__button">
                     </form>
                 </div>
+                <script src="https://smtpjs.com/v3/smtp.js"></script>
+                <script>
+                    function sendEmail(){
+                        Email.send({
+                            Host : "smtp.gmail.com",
+                            Username : "jokinen.lotta@gmail.com",
+                            Password : "password",
+                            To : 'jokinen.lotta@gmail.com',
+                            From : document.getElementById("email").value,
+                            Subject : "New contact Form Equiry",
+                            Body : "Name: " + document.getElementById("name").value
+                                + "<br> Email: " + document.getElementById("email").value
+                                + "<br> Message: " + document.getElementById("message").value
+                        }).then(
+                          message => alert("Message Sent Succesfully")
+                        );
+                    }
+                </script>
             </section>
         </main>
 
