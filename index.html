@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="robots" contect="noindex, nofollow">
@@ -11,7 +11,7 @@
         <!-- === BOX ICONS ====-->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Portfolio responsive complete</title>
+        <title>Personal website</title>
    
     </head>
     <body>
@@ -64,10 +64,10 @@
                         <h2 class="about__subtitle">I'am Lotta Jokinen</h2>
                         <span class="about__profession">ICT and Business specialist</span>
                         <p class="about__text">Passionate learner of new tecnologies, learning by doing is my motto, courage, self-management, business growth, curiosity, joy, innovation, serving others, community, communication and responsibility.</p>
-                        <p class="about__text">"Data is today's capital. Let's use it wisely."</p>
+                        <!--<p class="about__text">"Data is today's gold, but without people it is worthless. Let's use it wisely."</p>-->
                         <div class="about__social">
                             <a href="https://www.linkedin.com/in/lotta-jokinen-59b370138/" class="about__social-icon"><i class='bx bxl-linkedin'></i></a>
-                            <a href="#" class="about__social-icon"><i class='bx bxl-github'></i></a>
+                            <a href="https://pages.github.com" class="about__social-icon"><i class='bx bxl-github'></i></a>
                         </div>
 
                     </div>
@@ -177,34 +177,15 @@
                         <span class="contact__text">Uusimaa</span>
                     </div>
 
-                    <form onsubmit="sendEmail(); reset(); return false;"> <!--/c action="https://omadomain.fi/jokinen.lotta@gmail.com" class="contact__form" method="post"-->
+                    <form action="mailto:jokinen.lotta@gmail.com" class="contact__form" method="POST" enctype="text/plain">
                         <div class="contact__inputs">
-                            <input type="text" id="name" placeholder="Your name" class="contact__input" required>
-                            <input type="mail" id="email" placeholder="Your email" class="contact__input" required>
+                            <input type="text" placeholder="Name" class="contact__input" required>
+                            <input type="mail" placeholder="Email" class="contact__input" required>
                         </div>
-                        <textarea name="message" id="message" placeholder="Write a message..." cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea type="text" name="message" placeholder="" cols="0" rows="10" class="contact__input"></textarea>
                         <input type="submit" class="contact__button">
                     </form>
                 </div>
-                <script src="https://smtpjs.com/v3/smtp.js"></script>
-                <script>
-                    function sendEmail(){
-                        Email.send({
-                            SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
-                            Host : "smtp.gmail.com",
-                            Username : "jokinen.lotta@gmail.com",
-                            Password : "password",
-                            To : 'jokinen.lotta@gmail.com',
-                            From : document.getElementById("email").value,
-                            Subject : "New contact Form Equiry",
-                            Body : "Name: " + document.getElementById("name").value
-                                + "<br> Email: " + document.getElementById("email").value
-                                + "<br> Message: " + document.getElementById("message").value
-                        }).then(
-                          message => alert("Message sent succesfully. Thank you!")
-                        );
-                    }
-                </script>
             </section>
         </main>
 
